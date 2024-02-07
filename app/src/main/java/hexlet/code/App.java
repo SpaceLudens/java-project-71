@@ -19,7 +19,7 @@ class App implements Callable<Integer> {
             description = "path to first file",
             paramLabel = "filepath1")
     private String filePath1;
-    @Parameters(index = "0",
+    @Parameters(index = "1",
             description = "path to second file",
             paramLabel = "filepath2")
     private String filePath2;
@@ -33,6 +33,6 @@ class App implements Callable<Integer> {
         return null;
     }
     public static void main(String[] args) {
-        System.exit(new CommandLine(new App()).execute(args));
+        new CommandLine(new App()).execute(args);
     }
 }
