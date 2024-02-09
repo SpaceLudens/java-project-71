@@ -1,7 +1,7 @@
 package io.hexlet;
 
 import static hexlet.code.Differ.generate;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class ApplicationTest {
@@ -19,6 +19,6 @@ public class ApplicationTest {
                   + verbose: true
                 }""";
         var actual = generate(path1, path2);
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 }
