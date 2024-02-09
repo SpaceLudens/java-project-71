@@ -40,19 +40,19 @@ public class Differ {
             if (fileMap2.containsKey(entry.getKey())) {
                 if (fileMap2.containsValue(entry.getValue())) {
                     result
-                            .append("  ")
+                            .append("    ")
                             .append(entry.getKey())
                             .append(": ").append(entry.getValue())
                             .append("\n");
                 } else {
                     result
-                            .append("- ")
+                            .append("  - ")
                             .append(entry.getKey())
                             .append(": ")
                             .append(entry.getValue())
                             .append("\n");
                     result
-                            .append("+ ")
+                            .append("  + ")
                             .append(entry.getKey())
                             .append(": ")
                             .append(fileMap2.getOrDefault(entry.getKey(), ""))
@@ -60,7 +60,7 @@ public class Differ {
                 }
             } else {
                 result
-                        .append("- ")
+                        .append("  - ")
                         .append(entry.getKey())
                         .append(": ")
                         .append(entry.getValue())
@@ -71,7 +71,7 @@ public class Differ {
         for (var entry : fileMap2.entrySet()) {
             if (!sortedMap.containsKey(entry.getKey())) {
                 result
-                        .append("+ ")
+                        .append("  + ")
                         .append(entry.getKey())
                         .append(": ")
                         .append(entry.getValue())
