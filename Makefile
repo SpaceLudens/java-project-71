@@ -22,7 +22,7 @@ test:
 	./gradlew test
 
 report:
-	./app/gradlew jacocoTestReport
+	./app/gradlew app jacocoTestReport
 
 lint:
 	./gradlew checkstyleMain
