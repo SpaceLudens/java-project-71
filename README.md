@@ -1,6 +1,5 @@
-# java-project-71:
+# Проект: Вычислитель отличий
 
-![Java CI](https://github.com/hexlet-boilerplates/java-package/workflows/Java%20CI/badge.svg)
 [![Actions Status](https://github.com/SpaceLudens/java-project-71/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/SpaceLudens/java-project-71/actions)
 [![Actions Status](https://github.com/SpaceLudens/java-project-71/actions/workflows/main.yml/badge.svg)]
 [![Maintainability](https://api.codeclimate.com/v1/badges/44471e5730a3454da086/maintainability)](https://codeclimate.com/github/SpaceLudens/java-project-71/maintainability)
