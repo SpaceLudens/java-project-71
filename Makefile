@@ -1,34 +1,34 @@
 .DEFAULT_GOAL := build-run
 
 setup:
-	./gradlew wrapper --gradle-version 8.4
+	./app/gradlew wrapper --gradle-version 8.4
 
 clean:
-	./gradlew clean
+	./app/gradlew -p app clean
 
 build:
-	./gradlew clean build
+	./app/gradlew -p app clean build
 
 install:
-	./gradlew clean install
+	./app/gradlew -p app clean install
 
 run-dist:
-	./build/install/app/bin/app
+	./app/build/install/app/bin/app -h
 
 run:
-	./gradlew run
+	./app/gradlew -p app run
 
 test:
-	./gradlew test
+	./app/gradlew -p app test
 
 report:
-	./gradlew jacocoTestReport
+	./app/gradlew -p app jacocoTestReport
 
 lint:
-	./gradlew checkstyleMain
+	./app/gradlew -p app checkstyleMain
 
 check-deps:
-	./gradlew dependencyUpdates -Drevision=release
+	./app/gradlew  -p app dependencyUpdates -Drevision=release
 
 
 build-run: build run
