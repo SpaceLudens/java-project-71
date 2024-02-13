@@ -14,13 +14,11 @@ import static hexlet.code.Differ.generate;
         mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference.")
 
-class App implements Callable<Integer> {
-    @Parameters(index = "0",
-            description = "path to first file",
+class App implements Callable<String> {
+    @Parameters(description = "path to first file",
             paramLabel = "filepath1")
     private String filePath1;
-    @Parameters(index = "1",
-            description = "path to second file",
+    @Parameters(description = "path to second file",
             paramLabel = "filepath2")
     private String filePath2;
     @Option(names = {"-f", "--format"},
@@ -28,7 +26,7 @@ class App implements Callable<Integer> {
             paramLabel = "format")
     String format;
     @Override
-    public Integer call() throws Exception {
+    public String call() throws Exception {
         System.out.println(generate(filePath1, filePath2));
         return null;
     }

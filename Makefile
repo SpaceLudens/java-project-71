@@ -13,7 +13,7 @@ install:
 	./app/gradlew -p app clean install
 
 run-dist:
-	./app/build/install/app/bin/app -h
+	./app/build/install/app/bin/app
 
 run:
 	./app/gradlew -p app run
@@ -30,6 +30,8 @@ lint:
 check-deps:
 	./app/gradlew  -p app dependencyUpdates -Drevision=release
 
+help:
+	./app/build/install/app/bin/app -h
 
 build-run: build run
 
