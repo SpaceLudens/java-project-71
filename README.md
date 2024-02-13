@@ -6,3 +6,4 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/44471e5730a3454da086/test_coverage)](https://codeclimate.com/github/SpaceLudens/java-project-71/test_coverage)
 
 Аскинема с примером работы пакета на шаге 5: https://asciinema.org/a/jyw5T7JuN1XqWfDzdtLiRB3y4
+Аскинема с примером работы пакета на шаге 7: https://asciinema.org/a/j42RQWuhXnbMDCT8nWNo0V7EA
