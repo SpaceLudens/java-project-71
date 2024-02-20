@@ -2,64 +2,66 @@ package hexlet.code;
 
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Objects;
 
 import static hexlet.code.Parser.parser;
 
-
 public class Differ {
-    public static String generate(String filePath1, String filePath2) throws Exception {
-        Map<String, Object> fileMap1 = parser(filePath1);
-        Map<String, Object> fileMap2 = parser(filePath2);
-        Map<String, Object> sortedMap = new TreeMap<>(fileMap1);
+    public static List<Map<String, Object>> differ(String filePath1, String filePath2) throws Exception {
 
-        StringBuilder result = new StringBuilder();
+        Map<String, Object> map1 = new TreeMap<>(parser(filePath1));
+        Map<String, Object> map2 = new TreeMap<>(parser(filePath2));
 
-        result.append("{\n");
+        Set<String> keys = new TreeSet<>();
+        keys.addAll(map1.keySet());
+        keys.addAll(map2.keySet());
 
-        for (var entry : sortedMap.entrySet()) {
-            if (fileMap2.containsKey(entry.getKey())) {
-                if (fileMap2.containsValue(entry.getValue())) {
-                    result
-                            .append("    ")
-                            .append(entry.getKey())
-                            .append(": ").append(entry.getValue())
-                            .append("\n");
-                } else {
-                    result
-                            .append("  - ")
-                            .append(entry.getKey())
-                            .append(": ")
-                            .append(entry.getValue())
-                            .append("\n");
-                    result
-                            .append("  + ")
-                            .append(entry.getKey())
-                            .append(": ")
-                            .append(fileMap2.getOrDefault(entry.getKey(), ""))
-                            .append("\n");
-                }
+        List<Map<String, Object>> result = new ArrayList<>();
+
+        for (String key : keys) {
+            Map<String, Object> mergeMap = new LinkedHashMap<>();
+            if (!map1.containsKey(key)) {
+                mergeMap.put(key, map2.get(key));
+                mergeMap.put("changes", "  + ");
+                mergeMap.put("key", key);
+                mergeMap.put("oldValue", map2.get(key));
+                mergeMap.put("newValue", map2.get(key));
+                result.add(mergeMap);
+            } else if (!map2.containsKey(key)) {
+                mergeMap.put(key, map1.get(key));
+                mergeMap.put("changes", "  - ");
+                mergeMap.put("key", key);
+                mergeMap.put("oldValue", map1.get(key));
+                mergeMap.put("newValue", map1.get(key));
+                result.add(mergeMap);
+            } else if (Objects.equals(map1.get(key), map2.get(key))) {
+                mergeMap.put(key, map1.get(key));
+                mergeMap.put("changes", "    ");
+                mergeMap.put("key", key);
+                mergeMap.put("oldValue", map1.get(key));
+                mergeMap.put("newValue", map1.get(key));
+                result.add(mergeMap);
             } else {
-                result
-                        .append("  - ")
-                        .append(entry.getKey())
-                        .append(": ")
-                        .append(entry.getValue())
-                        .append("\n");
+                mergeMap.put(key, map1.get(key));
+                mergeMap.put("changes", "  - ");
+                mergeMap.put("key", key);
+                mergeMap.put("oldValue", map1.get(key));
+                mergeMap.put("newValue", map1.get(key));
+                result.add(mergeMap);
+                mergeMap = new LinkedHashMap<>();
+                mergeMap.put(key, map2.get(key));
+                mergeMap.put("changes", "  + ");
+                mergeMap.put("key", key);
+                mergeMap.put("oldValue", map2.get(key));
+                mergeMap.put("newValue", map2.get(key));
+                result.add(mergeMap);
             }
         }
-
-        for (var entry : fileMap2.entrySet()) {
-            if (!sortedMap.containsKey(entry.getKey())) {
-                result
-                        .append("  + ")
-                        .append(entry.getKey())
-                        .append(": ")
-                        .append(entry.getValue())
-                        .append("\n");
-            }
-        }
-
-        result.append("}");
-        return String.valueOf(result);
+        return result;
     }
 }
