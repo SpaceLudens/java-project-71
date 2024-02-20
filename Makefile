@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := build-run
 
 setup:
-	./app/gradlew wrapper --gradle-version 8.4
+	./app/gradlew wrapper --gradle-version 9.0
 
 clean:
 	./app/gradlew -p app clean
@@ -29,10 +29,8 @@ lint:
 
 check-deps:
 	./app/gradlew  -p app dependencyUpdates -Drevision=release
-
-help:
-	./app/build/install/app/bin/app -h
-
+	
+	
 build-run: build run
 
 .PHONY: build
