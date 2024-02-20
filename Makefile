@@ -18,6 +18,9 @@ run-dist:
 run:
 	./app/gradlew -p app run
 
+test:
+	./gradlew -p app test
+	
 report:
 	./app/gradlew -p app jacocoTestReport
 
