@@ -24,6 +24,6 @@ public class Stylish {
                 }
             }
         }
-        return String.valueOf(result + "}");
+        return result + "}";
     }
 }

@@ -83,7 +83,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void testGenerate() throws Exception {
+    public void testGenerateWithPlainFormatter() throws Exception {
         String expected = """
                 Property 'chars2' was updated. From [complex value] to false
                 Property 'checked' was updated. From false to true
