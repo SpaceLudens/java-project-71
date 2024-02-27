@@ -3,16 +3,17 @@ package hexlet.code;
 import java.util.List;
 import java.util.Map;
 
+import static hexlet.code.formatters.Plain.plain;
+import static hexlet.code.formatters.Stylish.stylish;
+
 public class Formatter {
-    public static String stylish(List<Map<String, Object>> list) {
-        StringBuilder result = new StringBuilder();
-        result.append("{\n");
-        for (var map : list) {
-            String changes = (String) map.get("changes");
-            String key = (String) map.get("key");
-            var value = map.get("oldValue");
-            result.append(changes).append(key).append(": ").append(value).append("\n");
+    public static String formatter(List<Map<String, Object>> diffResult, String format) {
+        if (format.equals("stylish")) {
+            return stylish(diffResult);
+        } else if (format.equals("plain")) {
+            return plain(diffResult);
         }
-        return String.valueOf(result + "}");
+        return null;
     }
+
 }
