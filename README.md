@@ -8,4 +8,5 @@
 Аскинема с примером работы пакета на шаге 5: https://asciinema.org/a/jyw5T7JuN1XqWfDzdtLiRB3y4
 Аскинема с примером работы пакета на шаге 7: https://asciinema.org/a/j42RQWuhXnbMDCT8nWNo0V7EA
 Аскинема с примером работы пакета на шаге 8: https://asciinema.org/a/WdzjPjKZ1lWF4r595b71IUfJa
-Аскинема с примером работы пакета на шаге 9: https://asciinema.org/connect/e368788f-ef8d-445b-ba41-2761c3432565
+Аскинема с примером работы пакета на шаге 9: https://asciinema.org/a/vp2bDdbDoe8H81TneyjB2vvt2
+Аскинема с примером работы пакета на шаге 10 :https://asciinema.org/a/mGH6B7DIyYLHINHGp7goDizYW

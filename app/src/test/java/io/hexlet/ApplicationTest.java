@@ -1,6 +1,7 @@
 package io.hexlet;
 
 import static hexlet.code.Parser.parser;
+import static hexlet.code.formatters.Json.json;
 import static hexlet.code.formatters.Plain.plain;
 import static hexlet.code.formatters.Stylish.stylish;
 import static io.hexlet.TestFixture.getList;
@@ -18,11 +19,12 @@ import java.util.Map;
 
 public class ApplicationTest {
     String pathJson1 = "src/test/resources/file1.json";
+    String pathJson3 = "src/test/resources/file3.json";
     String pathYaml1 = "src/test/resources/file1.yaml";
     @Test
     public void testParserJson() throws Exception {
         Path absolutePath = Paths.get(pathJson1).toAbsolutePath().normalize();
-        String content = Files.readString(absolutePath);
+        String content = Files.readString(absolutePath).trim();
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Object> expected = objectMapper.readValue(content, new TypeReference<>() { });
         var actual = parser(pathJson1);
@@ -33,7 +35,7 @@ public class ApplicationTest {
     @Test
     public void testParserYaml() throws Exception {
         Path absolutePath = Paths.get(pathYaml1).toAbsolutePath().normalize();
-        String content = Files.readString(absolutePath);
+        String content = Files.readString(absolutePath).trim();
         ObjectMapper objectMapper = new YAMLMapper();
         Map<String, Object> expected = objectMapper.readValue(content, new TypeReference<>() { });
         var actual = parser(pathYaml1);
@@ -41,7 +43,7 @@ public class ApplicationTest {
 
     }
     @Test
-    public void testStylishFormatter() throws Exception {
+    public void testStylishFormatter() {
         String expected = """
                 {
                   - chars2: [d, e, f]
@@ -58,7 +60,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void testPlainFormatter() throws Exception {
+    public void testPlainFormatter() {
         String expected = """
                 Property 'chars2' was updated. From [complex value] to false
                 Property 'checked' was updated. From false to true
@@ -67,6 +69,14 @@ public class ApplicationTest {
                 Property 'key2' was added with value: 'value2'
                 """;
         String actual = plain(getList());
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testJsonFormatter() throws Exception {
+        Path absolutePath = Paths.get(pathJson3).toAbsolutePath().normalize();
+        String expected = Files.readString(absolutePath).trim();
+        String actual = json(getList());
         assertEquals(expected, actual);
     }
 }

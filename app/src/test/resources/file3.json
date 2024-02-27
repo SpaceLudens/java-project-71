@@ -1,3 +1,27 @@
-{
-"follow": false
-}
+[ {
+  "key" : "chars1",
+  "oldValue" : [ "a", "b", "c" ]
+}, {
+  "changes" : "updated",
+  "key" : "chars2",
+  "newValue" : false,
+  "oldValue" : [ "d", "e", "f" ]
+}, {
+  "changes" : "updated",
+  "key" : "checked",
+  "newValue" : true,
+  "oldValue" : false
+}, {
+  "changes" : "updated",
+  "key" : "default",
+  "newValue" : [ "value1", "value2" ],
+  "oldValue" : null
+}, {
+  "changes" : "removed",
+  "key" : "key1",
+  "oldValue" : "value1"
+}, {
+  "changes" : "added",
+  "key" : "key2",
+  "oldValue" : "value2"
+} ]
