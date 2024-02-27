@@ -100,6 +100,6 @@ public class ApplicationTest {
                 Property 'setting3' was updated. From true to 'none'
                 """;
         String actual = generate(pathJson1, pathJson2, "plain");
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 }
