@@ -87,8 +87,4 @@ public class Differ {
         }
         return formatter(result, format);
     }
-
-    public static void main(String[] args) throws Exception {
-        System.out.println(generate("src/main/resources/file1.yaml", "src/main/resources/file2.yaml"));
-    }
 }

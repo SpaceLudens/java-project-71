@@ -22,7 +22,7 @@ public class Parser {
 
         String content = Files.readString(path);
         boolean endsWithsJson = filePath.contains("json");
-        boolean endsWithsYaml = filePath.contains("yaml");
+        boolean endsWithsYaml = filePath.contains("yaml") || filePath.contains("yml");
 
         if (endsWithsJson) {
             objectMapper = new ObjectMapper();
