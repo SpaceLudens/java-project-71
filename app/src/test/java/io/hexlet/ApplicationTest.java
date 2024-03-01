@@ -82,7 +82,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void testGenerateWithStylishFormatter() throws Exception {
+    public void testGenerateWithStylishFormat() throws Exception {
         String expected = """
                 {
                     chars1: [a, b, c]
@@ -114,7 +114,7 @@ public class ApplicationTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void testGenerateWithPlainFormatter() throws Exception {
+    public void testGenerateWithPlainFormat() throws Exception {
         String expected = """
                 Property 'chars2' was updated. From [complex value] to false
                 Property 'checked' was updated. From false to true
