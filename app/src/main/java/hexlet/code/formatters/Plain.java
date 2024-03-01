@@ -33,12 +33,12 @@ public class Plain {
                 }
             }
         }
-        return String.valueOf(result);
+        return String.valueOf(result).trim();
     }
 
     public static Object formatMapValue(Object value) {
         Object result = value;
-        if (value != null && value instanceof String) {
+        if (value instanceof String) {
             result = "'" + value + "'";
         } else if (value != null && !(value instanceof Boolean) && !(value instanceof Integer)) {
             result = "[complex value]";

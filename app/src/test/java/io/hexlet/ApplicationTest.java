@@ -48,6 +48,7 @@ public class ApplicationTest {
     public void testStylishFormatter() {
         String expected = """
                 {
+                    chars1: [a, b, c]
                   - chars2: [d, e, f]
                   + chars2: false
                   - checked: false
@@ -68,8 +69,7 @@ public class ApplicationTest {
                 Property 'checked' was updated. From false to true
                 Property 'default' was updated. From null to [complex value]
                 Property 'key1' was removed
-                Property 'key2' was added with value: 'value2'
-                """;
+                Property 'key2' was added with value: 'value2'""";
         String actual = plain(getList());
         assertEquals(expected, actual);
     }
@@ -97,8 +97,7 @@ public class ApplicationTest {
                 Property 'obj1' was added with value: [complex value]
                 Property 'setting1' was updated. From 'Some value' to 'Another value'
                 Property 'setting2' was updated. From 200 to 300
-                Property 'setting3' was updated. From true to 'none'
-                """;
+                Property 'setting3' was updated. From true to 'none'""";
         String actual = generate(pathJson1, pathJson2, "plain");
         assertEquals(expected, actual);
     }
