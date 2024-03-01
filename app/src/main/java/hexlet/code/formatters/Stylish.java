@@ -22,6 +22,8 @@ public class Stylish {
                 } else {
                     result.append("    ").append(key).append(": ").append(oldValue).append("\n");
                 }
+            } else {
+                result.append("    ").append(key).append(": ").append(oldValue).append("\n");
             }
         }
         return result + "}";
