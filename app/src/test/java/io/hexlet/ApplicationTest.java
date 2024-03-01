@@ -19,10 +19,7 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 public class ApplicationTest {
-    String pathJson1 = "src/test/resources/file1.json";
-    String pathJson2 = "src/test/resources/file2.json";
-    String pathJson3 = "src/test/resources/file3.json";
-    String pathYaml1 = "src/test/resources/file1.yaml";
+    private final String pathJson1 = "src/test/resources/file1.json";
     @Test
     public void testParserJson() throws Exception {
         Path absolutePath = Paths.get(pathJson1).toAbsolutePath().normalize();
@@ -36,6 +33,7 @@ public class ApplicationTest {
 
     @Test
     public void testParserYaml() throws Exception {
+        String pathYaml1 = "src/test/resources/file1.yaml";
         Path absolutePath = Paths.get(pathYaml1).toAbsolutePath().normalize();
         String content = Files.readString(absolutePath).trim();
         ObjectMapper objectMapper = new YAMLMapper();
@@ -76,6 +74,7 @@ public class ApplicationTest {
 
     @Test
     public void testJsonFormatter() throws Exception {
+        String pathJson3 = "src/test/resources/file3.json";
         Path absolutePath = Paths.get(pathJson3).toAbsolutePath().normalize();
         String expected = Files.readString(absolutePath).trim();
         String actual = json(getList());
@@ -98,6 +97,7 @@ public class ApplicationTest {
                 Property 'setting1' was updated. From 'Some value' to 'Another value'
                 Property 'setting2' was updated. From 200 to 300
                 Property 'setting3' was updated. From true to 'none'""";
+        String pathJson2 = "src/test/resources/file2.json";
         String actual = generate(pathJson1, pathJson2, "plain");
         assertEquals(expected, actual);
     }

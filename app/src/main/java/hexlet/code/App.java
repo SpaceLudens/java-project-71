@@ -25,7 +25,7 @@ class App implements Callable<String> {
             defaultValue = "stylish",
             description = "output format [default: stylish]",
             paramLabel = "format")
-    String format;
+    private String format;
     @Override
     public String call() throws Exception {
         String diff = generate(filePath1, filePath2, format);
