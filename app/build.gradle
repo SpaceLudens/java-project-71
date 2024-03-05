@@ -2,7 +2,6 @@ plugins {
     id 'application'
     id 'checkstyle'
     id 'jacoco'
-    id 'java'
 }
 
 group = "hexlet.code"
@@ -26,7 +25,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.1")
-    implementation group: 'org.jacoco', name: 'org.jacoco.core', version: '0.8.10'
+    implementation ("org.jacoco:org.jacoco.core:0.8.10")
 }
 
 jacocoTestReport {
