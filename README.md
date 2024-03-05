@@ -13,13 +13,14 @@ CLI-утилита позволяет сравнивать два конфигу
 [![Maintainability](https://api.codeclimate.com/v1/badges/44471e5730a3454da086/maintainability)](https://codeclimate.com/github/SpaceLudens/java-project-71/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/44471e5730a3454da086/test_coverage)](https://codeclimate.com/github/SpaceLudens/java-project-71/test_coverage)
 
-# Аскинема с примером работы пакета на шаге 5:  
+# Аскинемы с примером работы пакета:
+на шаге 5:  
 [![asciicast](https://asciinema.org/a/jlWzBGZptRGOrBB2sKpTJEEZG.svg)](https://asciinema.org/a/jlWzBGZptRGOrBB2sKpTJEEZG)  
-Аскинема с примером работы пакета на шаге 7:  
+на шаге 7:  
 [![asciicast](https://asciinema.org/a/fxluLZJcBu1h42zsZ4LUkt5XE.svg)](https://asciinema.org/a/fxluLZJcBu1h42zsZ4LUkt5XE)  
-Аскинема с примером работы пакета на шаге 8:  
+на шаге 8:  
 [![asciicast](https://asciinema.org/a/KfrafeM9ZOL1HIOdvwXMpD3Q5.svg)](https://asciinema.org/a/KfrafeM9ZOL1HIOdvwXMpD3Q5)  
-Аскинема с примером работы пакета на шаге 9:  
+на шаге 9:  
 [![asciicast](https://asciinema.org/a/vp2bDdbDoe8H81TneyjB2vvt2.svg)](https://asciinema.org/a/vp2bDdbDoe8H81TneyjB2vvt2)  
-Аскинема с примером работы пакета на шаге 10:  
+на шаге 10:  
 [![asciicast](https://asciinema.org/a/mGH6B7DIyYLHINHGp7goDizYW.svg)](https://asciinema.org/a/mGH6B7DIyYLHINHGp7goDizYW)  
