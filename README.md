@@ -15,7 +15,11 @@ CLI-утилита позволяет сравнивать два конфигу
 
 Аскинема с примером работы пакета на шаге 5:  
 [![asciicast](https://asciinema.org/a/asciicast-id.svg)](https://asciinema.org/a/jyw5T7JuN1XqWfDzdtLiRB3y4)  
-Аскинема с примером работы пакета на шаге 7: https://asciinema.org/a/j42RQWuhXnbMDCT8nWNo0V7EA  
-Аскинема с примером работы пакета на шаге 8: https://asciinema.org/a/WdzjPjKZ1lWF4r595b71IUfJa  
-Аскинема с примером работы пакета на шаге 9: https://asciinema.org/a/vp2bDdbDoe8H81TneyjB2vvt2  
-Аскинема с примером работы пакета на шаге 10 :https://asciinema.org/a/mGH6B7DIyYLHINHGp7goDizYW  
+Аскинема с примером работы пакета на шаге 7:  
+[![asciicast](https://asciinema.org/a/asciicast-id.svg)](https://asciinema.org/a/j42RQWuhXnbMDCT8nWNo0V7EA)  
+Аскинема с примером работы пакета на шаге 8:  
+[![asciicast](https://asciinema.org/a/asciicast-id.svg)](https://asciinema.org/a/WdzjPjKZ1lWF4r595b71IUfJa)  
+Аскинема с примером работы пакета на шаге 9:  
+[![asciicast](https://asciinema.org/a/asciicast-id.svg)](https://asciinema.org/a/vp2bDdbDoe8H81TneyjB2vvt2)  
+Аскинема с примером работы пакета на шаге 10:  
+[![asciicast](https://asciinema.org/a/asciicast-id.svg)](https://asciinema.org/a/mGH6B7DIyYLHINHGp7goDizYW)  
