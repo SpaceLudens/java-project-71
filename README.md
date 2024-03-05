@@ -13,7 +13,7 @@ CLI-утилита позволяет сравнивать два конфигу
 [![Maintainability](https://api.codeclimate.com/v1/badges/44471e5730a3454da086/maintainability)](https://codeclimate.com/github/SpaceLudens/java-project-71/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/44471e5730a3454da086/test_coverage)](https://codeclimate.com/github/SpaceLudens/java-project-71/test_coverage)
 
-Аскинема с примером работы пакета на шаге 5:  
+# Аскинема с примером работы пакета на шаге 5:  
 [![asciicast](https://asciinema.org/a/jlWzBGZptRGOrBB2sKpTJEEZG.svg)](https://asciinema.org/a/jlWzBGZptRGOrBB2sKpTJEEZG)  
 Аскинема с примером работы пакета на шаге 7:  
 [![asciicast](https://asciinema.org/a/fxluLZJcBu1h42zsZ4LUkt5XE.svg)](https://asciinema.org/a/fxluLZJcBu1h42zsZ4LUkt5XE)  
