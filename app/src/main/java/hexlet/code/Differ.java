@@ -1,54 +1,49 @@
 package hexlet.code;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.LinkedHashMap;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Objects;
 
 import static hexlet.code.Formatter.formatter;
 import static hexlet.code.Parser.parser;
+import static hexlet.code.TreeBuilder.treeBuilder;
 
 public class Differ {
-    public static String generate(String filePath1, String filePath2, String format) throws Exception {
+    public static String readContent(String filePath) throws Exception {
+        Path path = Paths.get(filePath).toAbsolutePath().normalize();
 
-        Map<String, Object> map1 = new TreeMap<>(parser(filePath1));
-        Map<String, Object> map2 = new TreeMap<>(parser(filePath2));
-
-        Set<String> keys = new TreeSet<>();
-        keys.addAll(map1.keySet());
-        keys.addAll(map2.keySet());
-
-        List<Map<String, Object>> result = new ArrayList<>();
-
-        for (String key : keys) {
-            Map<String, Object> mergeMap = new LinkedHashMap<>();
-            if (!map1.containsKey(key)) {
-                mergeMap.put("key", key);
-                mergeMap.put("oldValue", map2.get(key));
-                mergeMap.put("changes", "added");
-                result.add(mergeMap);
-            } else if (!map2.containsKey(key)) {
-                mergeMap.put("key", key);
-                mergeMap.put("oldValue", map1.get(key));
-                mergeMap.put("changes", "removed");
-                result.add(mergeMap);
-            } else if (Objects.equals(map1.get(key), map2.get(key))) {
-                mergeMap.put("key", key);
-                mergeMap.put("oldValue", map1.get(key));
-                result.add(mergeMap);
-            } else {
-                mergeMap.put("key", key);
-                mergeMap.put("oldValue", map1.get(key));
-                mergeMap.put("newValue", map2.get(key));
-                mergeMap.put("changes", "updated");
-                result.add(mergeMap);
-            }
+        if (Files.notExists(path)) {
+            throw new Exception("File '" + path + " does not exist");
         }
-        return formatter(result, format);
+
+        return Files.readString(path);
+    }
+
+    public static String detectFormat(String filePath) {
+        var array = filePath.split("\\.");
+        String format = null;
+        if (array[array.length - 1].equalsIgnoreCase("json")) {
+            format = "json";
+        } else if (array[array.length - 1].equalsIgnoreCase("yaml")
+                   || array[array.length - 1].equalsIgnoreCase("yml")) {
+            format = "yaml";
+        }
+        return format;
+    }
+
+    public static String generate(String filePath1, String filePath2, String format) throws Exception {
+        String data1 = readContent(filePath1);
+        String data2 = readContent(filePath2);
+
+        String format1 = detectFormat(filePath1);
+        String format2 = detectFormat(filePath2);
+
+        Map<String, Object> map1 = new TreeMap<>(parser(data1, format1));
+        Map<String, Object> map2 = new TreeMap<>(parser(data2, format2));
+
+        return formatter(treeBuilder(map1, map2), format);
     }
 
     public static String generate(String filePath1, String filePath2) throws Exception {
